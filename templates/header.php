@@ -21,6 +21,8 @@ if (!isset($bodyClass)) {
     <link href='http://fonts.googleapis.com/css?family=Princess+Sofia' rel='stylesheet' type='text/css'>
 
     <link href="skin/css/styles.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="skin/js/utils.js"></script>
 </head>
 
 <body class="<?php echo $bodyClass; ?>">
