@@ -16,33 +16,36 @@
 * Layout elements.
 **/
 body {
+    display: -ms-flexbox;
+    -ms-flex-direction: column;
     display: -webkit-flex;
     -webkit-flex-direction: column;
     display: flex;
     flex-direction: column;
+
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    font: 1em/1.2 Raleway, sans-serif;
+    font: 1.1em/1.3 Raleway, sans-serif;
     color: rgb(66, 36, 36);
 }
 
 header,
 main,
-footer {
+body > footer {
     padding-right: 1rem;
     padding-left: 1rem;
 }
 
 header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 7.5em;
-    z-index: 1000;
-    
-    border-bottom: 1px solid;
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*right: 0;*/
+    /*left: 0;*/
+    /*height: 7.5em;*/
+    /*z-index: 1000;*/
+
+    box-shadow: 0 0 5px #888;
 }
 
 nav ul,
@@ -57,15 +60,16 @@ nav li {
 }
 
 main {
+    -ms-flex: 1 0 auto;
     -webkit-flex: 1;
     flex: 1 0 auto;
     margin: 0 0 1em 0;
     padding: 0 1em 1.5em 1em;
 }
 
-.not-scrolled main {
-    margin-top: 7.5em;
-}
+/*.not-scrolled main {*/
+    /*margin-top: 7.5em;*/
+/*}*/
 
 main > * {
     max-width: 50em;
@@ -103,8 +107,21 @@ h1:not(.logo) {
     text-align: center;
 }
 
-h2 {
-    border-bottom: 1px solid rgba(66, 36, 36, .7);
+h1 span {
+    font-family: monospace;
+    font-size: .5em;
+}
+
+@media (max-width: 50rem) {
+    h1 span {
+        display: block;
+    }
+}
+
+@media (min-width: 480px) {
+    h2 {
+        border-bottom: 1px solid rgba(66, 36, 36, .7);
+    }
 }
 
 a {
@@ -116,14 +133,6 @@ a:focus {
     color: rgb(29, 63, 56);
 }
 
-/* external links */
-a[href^=http]:after {
-    content: '\27B6';
-    display: inline-block;
-    margin-left: .2em;
-    font-size: 1.2em;
-    text-decoration: none;
-}
 
 
 /**
@@ -140,4 +149,44 @@ a[href^=http]:after {
 a.logo {
     float: left;
     font-size: 2em;
+}
+
+blockquote {
+    quotes: "\201C""\201D""\2018""\2019";
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    background: #f9f9f9;
+    border-left: 10px solid rgba(73,158,141, .5);
+}
+
+blockquote:before {
+    content: open-quote;
+    margin-right: 0.25em;
+    font-family: serif;
+    font-size: 4em;
+    line-height: 0.1em;
+    vertical-align: -0.4em;
+    color: rgba(73,158,141, .5);
+}
+
+blockquote p {
+    display: inline;
+}
+
+blockquote footer {
+    margin-top: .7em;
+    text-align: right;
+}
+
+dd {
+    margin-left: 0;
+}
+
+ul.link-list {
+    list-style-type: square;
+    color: rgb(73,158,141);
+}
+
+li + li {
+    margin-top: .5em;
 }
