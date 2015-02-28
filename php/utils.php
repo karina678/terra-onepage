@@ -16,7 +16,7 @@ function getTitleDefault() {
 
 function getPageHeadline($isHomePage = false, $headline = false) {
     if ($isHomePage || !$headline) {
-        return '<h1 class="logo">terra-karina</h1>';
+        return '<h1 class="logo">terra-karina <span>trying out web things</span></h1>';
     }
 
     $html = getHomeLink();
