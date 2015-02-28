@@ -4,26 +4,16 @@
  * 15.11.2014
  */
 
-include('php/utils.php');
 
 $title = 'terra-karina.de';
 $bodyClass = 'home';
 $isHomePage = true;
-include_once('templates/header.php');
+
+include('php/utils.php');
+include_once('templates/head.phtml');
 ?>
 
-<header>
-    <h1>terra-karina</h1>
-
-    <nav>
-        <ol class="cf">
-            <li><a href="#what-is-this-place">What is this place?</a></li>
-            <li><a href="#accessible-modal-window">Accessible modal window</a></li>
-            <li><a href="#drag-and-drop">A little bit of Drag & Drop</a></li>
-            <li><a href="#inspiration">Inspiration</a></li>
-        </ol>
-    </nav>
-</header>
+<?php include_once('templates/header.phtml'); ?>
 
 <main>
     <section id="what-is-this-place">
@@ -84,4 +74,4 @@ include_once('templates/header.php');
     </section>
 </main>
 
-<?php include_once('templates/footer.php');
+<?php include_once('templates/footer.phtml'); ?>
