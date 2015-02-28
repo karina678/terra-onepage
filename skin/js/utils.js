@@ -3,33 +3,42 @@
  * 14.01.2015
  */
 
-/*$('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
-        || location.hostname == this.hostname) {
-
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        if (target.length) {
-            $('html,body').animate({
-                scrollTop: target.offset().top
-            }, 1000);
-            return false;
-        }
-    }
-});*/
-
 window.onload = initPage;
 
 function initPage() {
     var linkElements = document.querySelectorAll('a[href^="#"]');
-
     for (var i = 0; i < linkElements.length; i++) {
         linkElements[i].addEventListener('click', smoothScroll, false);
     }
 }
 
+
+/**
+ * STICKY HEADER
+ */
+
 function smoothScroll() {
-    var targetId = this.hash.replace('#', '');
-    var target = document.getElementById(targetId);
-    console.log(target);
+    // Only execute if link target belongs to the same page.
+    if ((location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')) && (location.hostname == this.hostname)) {
+        var targetId = this.hash.replace('#', '');
+        var target = document.getElementById(targetId);
+
+        var speed = 500;
+        var movingFrequency = 15;
+        var hopCount = speed/movingFrequency;
+        var startTop = 0;
+        var targetTop = target.offsetTop;
+        var gap = (targetTop - startTop) / hopCount;
+
+        for (var i = 1; i <= hopCount; i++) {
+            (function() {
+                var hopTopPosition = gap * i;
+                setTimeout(function() {
+                    window.scrollTo(0, hopTopPosition + startTop);
+                }, movingFrequency * i);
+            })();
+        }
+
+        return false;
+    }
 }
