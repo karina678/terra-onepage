@@ -58,9 +58,9 @@ button {
     padding: 1em 2em;
     border: 1px solid rgb(73,158,141);
     border-radius: 5px;
-    background-color: #fff;
+    background-color: rgb(73,158,141);
     font-size: .9em;
-    color: rgb(73,158,141);
+    color: #fff;
     cursor: pointer;
 
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
@@ -69,10 +69,26 @@ button {
 
 button:hover,
 button:focus {
-    background-color: rgb(73,158,141);
-    color: #fff;
+    background-color: #fff;
+    color: rgb(73,158,141);
 }
 
 [type=submit] {
     float: right;
+}
+
+.btn-inline {
+    padding: 1em .3em;
+    background-color: #fff;
+    color: rgb(73,158,141);
+}
+
+.btn-inline:hover,
+.btn-inline:focus {
+    background-color: rgb(73,158,141);
+    color: #fff;
+}
+
+.form-list .btn-inline {
+    margin-top: 1.3em;
 }
