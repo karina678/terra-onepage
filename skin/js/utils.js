@@ -6,6 +6,7 @@
 window.onload = initPage;
 
 function initPage() {
+    // Init smooth scrolling.
     var linkElements = document.querySelectorAll('a[href^="#"]');
     for (var i = 0; i < linkElements.length; i++) {
         linkElements[i].addEventListener('click', smoothScroll, false);
@@ -15,6 +16,8 @@ function initPage() {
 
 /**
  * STICKY HEADER
+ *
+ * document.querySelector('body')[0].classList.remove('not-scrolled');
  */
 
 function smoothScroll() {
