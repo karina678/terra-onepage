@@ -34,3 +34,28 @@ function getCopyRightText() {
 
     return $text;
 }
+
+/**
+ * Get extra JavaScript files that are only needed on certain pages.
+ *
+ * @param string $filenames
+ * @return string
+ */
+function getJavascript($filenames = '') {
+    if (!$filenames) {
+        return '';
+    }
+
+    $filenames = explode(',', $filenames);
+    $scriptIncludes = '';
+
+    if (is_array($filenames)) {
+        foreach ($filenames as $filename) {
+            $scriptIncludes .= '<script type="text/javascript" src="skin/js/' . $filename . '"></script>';
+        }
+    } else {
+        $scriptIncludes .= '<script type="text/javascript" src="skin/js/' . $filenames . '"></script>';
+    }
+
+    return $scriptIncludes;
+}
