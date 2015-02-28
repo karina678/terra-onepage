@@ -34,6 +34,17 @@ footer {
     padding-left: 1rem;
 }
 
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 7.5em;
+    z-index: 1000;
+    
+    border-bottom: 1px solid;
+}
+
 nav ul,
 nav ol {
     list-style-type: none;
@@ -50,6 +61,10 @@ main {
     flex: 1 0 auto;
     margin: 0 0 1em 0;
     padding: 0 1em 1.5em 1em;
+}
+
+.not-scrolled main {
+    margin-top: 7.5em;
 }
 
 main > * {
@@ -73,11 +88,8 @@ body > footer {
 **/
 h1 {
     margin: 0.2em 0;
-    font-family: 'Princess Sofia', cursive;
     font-size: 4em;
     font-weight: 400;
-    color: rgb(73,158,141);
-    text-shadow: 1px 1px 3px rgb(133,204,159);
 }
 
 @media (max-width: 30em) {
@@ -85,6 +97,10 @@ h1 {
         font-size: 3em;
         text-shadow: 1px 1px 0 #499e8d, 3px 3px 0 rgba(200,232,200,.5);
     }
+}
+
+h1:not(.logo) {
+    text-align: center;
 }
 
 h2 {
@@ -100,10 +116,28 @@ a:focus {
     color: rgb(29, 63, 56);
 }
 
+/* external links */
 a[href^=http]:after {
     content: '\27B6';
     display: inline-block;
     margin-left: .2em;
     font-size: 1.2em;
     text-decoration: none;
+}
+
+
+/**
+* Page elements
+**/
+.logo {
+    font-family: 'Princess Sofia', cursive;
+    font-weight: 400;
+    color: rgb(73,158,141);
+    text-shadow: 1px 1px 3px rgb(133,204,159);
+    text-decoration: none;
+}
+
+a.logo {
+    float: left;
+    font-size: 2em;
 }
