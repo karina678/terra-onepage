@@ -7,11 +7,22 @@
  */
 
 function getHomeLink() {
-    return '<a href="" class="home-link">Home</a>';
+    return '<a href="./" class="logo">terra-karina</a>';
 }
 
 function getTitleDefault() {
     return '| terra-karina.de';
+}
+
+function getPageHeadline($isHomePage = false, $headline = false) {
+    if ($isHomePage || !$headline) {
+        return '<h1 class="logo">terra-karina</h1>';
+    }
+
+    $html = getHomeLink();
+    $html .= '<h1>' . $headline . '</h1>';
+
+    return $html;
 }
 
 function getCopyRightText() {
