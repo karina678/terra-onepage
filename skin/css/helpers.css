@@ -1,3 +1,10 @@
+/* Box model */
+*,
+*:before
+*:after {
+    box-sizing: border-box;
+}
+
 /* Clearfix */
 .cf:before,
 .cf:after {
