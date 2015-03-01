@@ -94,7 +94,7 @@ include_once('templates/head.phtml');
                         </li>
                         <li>
                             <a href="http://www.smashingmagazine.com/2014/09/15/making-modal-windows-better-for-everyone/">
-                                Scott O'Hara - Making Modal Windows Better For Everyone</a>
+                                Scott O'Hara - Making Modal Windows Better For Everyone
                             </a>
                         </li>
                         <li>
