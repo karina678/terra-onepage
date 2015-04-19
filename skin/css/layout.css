@@ -190,3 +190,17 @@ ul.link-list {
 li + li {
     margin-top: .5em;
 }
+
+code {
+    font-family: monospace;
+    font-size: 1.2em;
+}
+
+.info-box {
+    padding: .7em;
+    border: 1px solid rgba(73,158,141, .5);
+}
+
+.info-box ul {
+    list-style-type: none;
+}

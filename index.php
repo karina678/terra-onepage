@@ -10,6 +10,7 @@ $bodyClass = 'home';
 $isHomePage = true;
 
 $extraJs = 'modals.js';
+$extraCss = 'modals.css';
 
 include('php/utils.php');
 include_once('templates/head.phtml');
@@ -43,6 +44,31 @@ include_once('templates/head.phtml');
                 </cite>
             </footer>
         </blockquote>
+
+        <p>
+            Another big issue is big modals on tiny screens. The most common technique as far as I have encountered it,
+            is to just set the modal to <code>position: fixed;</code>. But with that one never reaches the end of large contents,
+            while the main document in the background keeps scrolling.
+        </p>
+
+        <p>
+            As a bonus (more or less for myself) I'll try out one appearing effect by Manoela Ilic found on
+            <a href="http://tympanus.net/codrops/2013/06/25/nifty-modal-window-effects/">tympanus.net</a>.
+        </p>
+
+        <div class="info-box">
+            <strong>Please note:</strong>
+            <ul>
+                <li>
+                    The explanation how to make a modal accessible can be found in the
+                    <a href="http://www.smashingmagazine.com/2014/09/15/making-modal-windows-better-for-everyone/">Smashing Magazine article by Scott O'Hara</a>,
+                    so I won't repeat all that here. This is basically completely what I used to build the modal functionality.
+                </li>
+                <li>
+                    As this is a place for me to try new technologies, not everything will work in every browser - especially Internet Explorer < v11.
+                </li>
+            </ul>
+        </div>
 
         <form action="" method="" name="modal-demo-form">
             <fieldset>
@@ -109,10 +135,33 @@ include_once('templates/head.phtml');
     </section>
 </main>
 
-<div id="demo-modal" class="modal-container">
-    <button type="button" class="btn-inline btn-close modal-close" aria-label="close">
-        <span class="sr-only">close</span>x
-    </button>
+<div id="demo-modal" class="modal-container" aria-hidden="true" aria-labelledby="modal-heading">
+    <div class="modal-content-wrapper">
+        <button type="button" class="btn-inline btn-close modal-close" aria-label="close">
+            <span class="sr-only">close</span>x
+        </button>
+
+        <div class="modal-content">
+            <form action="" method="post" name="modal-inner-form">
+                <fieldset>
+                    <legend id="modal-heading">Form inside the modal</legend>
+
+                    <ul class="form-list">
+                        <li>
+                            <label for="modal-input-1">Modal input 1</label>
+                            <input type="text" name="modal-input-1" id="modal-input-1" />
+                        </li>
+                        <li>
+                            <label for="modal-input-2">Modal input 2</label>
+                            <input type="text" name="modal-input-2" id="modal-input-2" />
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <p class="cf"><button type="submit">Submit Modal Form</button></p>
+            </form>
+        </div>
+    </div>
 </div>
 
 <?php include_once('templates/footer.phtml'); ?>
