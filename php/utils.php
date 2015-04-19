@@ -59,3 +59,22 @@ function getJavascript($filenames = '') {
 
     return $scriptIncludes;
 }
+
+function getCss($filenames = '') {
+    if (!$filenames) {
+        return '';
+    }
+
+    $filenames = explode(',', $filenames);
+    $cssIncludes = '';
+
+    if (is_array($filenames)) {
+        foreach ($filenames as $filename) {
+            $cssIncludes .= '<link href="skin/css/' . $filename . '" rel="stylesheet" type="text/css" />';
+        }
+    } else {
+        $cssIncludes .= '<link href="skin/css/' . $filenames . '" rel="stylesheet" type="text/css" />';
+    }
+
+    return $cssIncludes;
+}

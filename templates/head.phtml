@@ -21,9 +21,9 @@ if (!isset($bodyClass)) {
     <link href='http://fonts.googleapis.com/css?family=Princess+Sofia' rel='stylesheet' type='text/css'>
 
     <link href="skin/css/styles.css" rel="stylesheet" type="text/css" />
+    <?php if (isset($extraCss)) { echo getCss($extraCss); } ?>
 
     <script type="text/javascript" src="skin/js/utils.js"></script>
-
     <?php if (isset($extraJs)) { echo getJavascript($extraJs); } ?>
 </head>
 
