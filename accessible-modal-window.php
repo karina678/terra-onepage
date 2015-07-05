@@ -3,6 +3,7 @@
  * Created by Karina Hinkelthein
  * 07.02.2015
  */
+error_reporting(0);
 
 include('php/utils.php');
 
@@ -16,6 +17,8 @@ include('templates/header.phtml');
 
 <main>
     <section id="accessible-modal-window">
+        <strong>[-- NOT FINISHED! --]</strong>
+
         <h1>Keyboard accessible modal window</h1>
 
         <p>

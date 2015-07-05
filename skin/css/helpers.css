@@ -15,3 +15,17 @@
 .cf:after {
     clear: both;
 }
+
+/* Stuff... */
+.note {
+    font-size: .9em;
+    font-style: italic;
+}
+
+.note:before {
+    content: 'Note: ';
+}
+
+.error {
+    color: #f00;
+}

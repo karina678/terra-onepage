@@ -78,7 +78,7 @@ main > * {
 }
 
 section + section {
-    margin-top: 5em;
+    margin-top: 2.5em;
 }
 
 body > footer {
@@ -145,6 +145,7 @@ a:focus {
 
 a.logo {
     float: left;
+    margin: .5em;
     font-size: 2em;
 }
 
@@ -175,8 +176,16 @@ blockquote footer {
     text-align: right;
 }
 
+dd + dt {
+    margin-top: 1em;
+}
+
 dd {
-    margin-left: 0;
+    /*margin-left: 0;*/
+}
+
+dd > ul {
+    padding-left: 0;
 }
 
 ul.link-list {
@@ -191,6 +200,8 @@ li + li {
 code {
     font-family: monospace;
     font-size: 1.2em;
+    background-color: rgba(204, 204, 204, .5);
+    word-wrap: break-word;
 }
 
 .info-box {

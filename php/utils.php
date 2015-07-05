@@ -75,3 +75,22 @@ function getCss($filenames = '') {
 
     return $cssIncludes;
 }
+
+function getExternalSource($externalSource = '') {
+    if (!$externalSource) {
+        return '';
+    }
+
+    $externalSource = explode(',', $externalSource);
+    $sources = '';
+
+    if (is_array($externalSource)) {
+        foreach ($externalSource as $source) {
+            $sources = $source;
+        }
+    } else {
+        $sources = $externalSource;
+    }
+
+    return $sources;
+}
