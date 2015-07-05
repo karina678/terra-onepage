@@ -1,0 +1,38 @@
+[name=modal-demo-form] {
+    margin: 2.3em 0;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+}
+
+.modal-container[aria-hidden=true] {
+    display: none;
+}
+
+/* TODO: find better way to center and fix overlay & modal */
+.modal-container {
+    position: fixed;
+    top: .7em;
+    right: .7em;
+    bottom: .7em;
+    left: .7em;
+    z-index: 9999;
+}
+
+.modal-container:focus {
+    outline: none;
+}
+
+.modal-content-wrapper {
+    width: 50em;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 3em;
+    background: #fff;
+}

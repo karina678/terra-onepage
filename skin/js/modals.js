@@ -67,6 +67,7 @@ function Modal() {
         var closeButton = modal.querySelectorAll('.modal-close').item(0);
         closeButton.addEventListener('click', modalClose, false);
         modal.addEventListener('keydown', modalClose, false);
+        //TODO: add modalClose to clicking on overlay
     };
 
     var modalClose = function(event) {
