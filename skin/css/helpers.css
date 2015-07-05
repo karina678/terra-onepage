@@ -29,3 +29,23 @@
 .error {
     color: #f00;
 }
+
+.responsive-container {
+    overflow-x: auto;
+}
+
+.footnote-link {
+    text-decoration: none;
+}
+
+.footnote-link:before {
+    content: '\2009';
+}
+
+.footnotes {
+    list-style-type: none !important;
+}
+
+.footnotes li:before {
+    content: '[' attr(data-number) '] ';
+}

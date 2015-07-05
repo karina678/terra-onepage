@@ -3,7 +3,7 @@
  * 04.07.2015
  */
 
-window.onload = startLocating;
+window.addEventListener('load', startLocating, false);
 
 function startLocating() {
     if (navigator.geolocation) {
@@ -21,20 +21,17 @@ function startLocating() {
 function showPositionData(position) {
     var latitude    = position.coords.latitude;
     var longitude   = position.coords.longitude;
-    var div         = document.getElementById('position');
-    var infoList    = document.createElement('dl');
+    var infoList    = document.getElementById('position');
+    var infoItems   = '';
 
     // Create list of position information.
     for (var positionInfo in position.coords) {
-        var dt = document.createElement('dt');
-        var dd = document.createElement('dd');
+        var infoValue = position.coords[positionInfo] ? position.coords[positionInfo] : '<i>not available</i>';
 
-        dt.innerHTML = positionInfo;
-        dd.innerHTML = position.coords[positionInfo] ? position.coords[positionInfo] : '<i>not available</i>';
-        infoList.appendChild(dt);
-        infoList.appendChild(dd);
+        infoItems += '<tr><th>' + positionInfo + '</th>';
+        infoItems += '<td>' + infoValue + '</td></tr>';
     }
-    div.appendChild(infoList);
+    infoList.innerHTML = infoItems;
 
     // Show user's distanc to Fiji Islands.
     var fijiCoords = {
@@ -109,7 +106,7 @@ function degreeInRadiant(degree) {
  * @param error
  */
 function locationError(error) {
-    showErrorMessage(error.code + ': ' + error.message);
+    showErrorMessage(error.message);
 }
 
 /**
@@ -121,7 +118,7 @@ function showErrorMessage(message) {
     var errorNote = document.createElement('p');
     errorNote.className = 'error';
     errorNote.innerHTML = message;
-    document.getElementById('position').appendChild(errorNote);
+    document.querySelector('section').insertBefore(errorNote, document.querySelector('p.note'));
 }
 
 /**

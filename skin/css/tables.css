@@ -1,0 +1,22 @@
+table {
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: .5em .75em;
+    border-bottom: 1px solid #ccc;
+}
+
+tr:first-child th,
+tr:first-child td {
+    border-top: 1px solid #ccc;
+}
+
+tr:nth-child(odd) > * {
+    background-color: #f2f2f2;
+}
+
+th {
+    text-align: left;
+}

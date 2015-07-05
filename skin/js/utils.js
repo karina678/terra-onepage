@@ -3,7 +3,7 @@
  * 14.01.2015
  */
 
-window.onload = initPage;
+window.addEventListener('load', initPage, false);
 
 function initPage() {
     // Init smooth scrolling.
