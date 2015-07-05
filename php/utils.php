@@ -14,15 +14,12 @@ function getTitleDefault() {
     return '| terra-karina.de';
 }
 
-function getPageHeadline($isHomePage = false, $headline = false) {
-    if ($isHomePage || !$headline) {
+function getPageHeadline($isHomePage = false) {
+    if ($isHomePage) {
         return '<h1 class="logo">terra-karina <span>trying out web things</span></h1>';
     }
 
-    $html = getHomeLink();
-    $html .= '<h1>' . $headline . '</h1>';
-
-    return $html;
+    return getHomeLink();
 }
 
 function getCopyRightText() {

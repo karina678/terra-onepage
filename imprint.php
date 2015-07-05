@@ -7,15 +7,16 @@
 include('php/utils.php');
 
 $title = 'Imprint ' . getTitleDefault();
-$headline = 'Imprint';
 
 include('templates/head.phtml');
+include('templates/header.phtml');
 ?>
 
-<?php include_once('templates/header.phtml'); ?>
-
 <main>
-    <p>Insert imprint text here!</p>
+    <section>
+        <h1>Imprint</h1>
+        <p>Insert imprint text here!</p>
+    </section>
 </main>
 
 <?php include_once('templates/footer.phtml'); ?>

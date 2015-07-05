@@ -90,21 +90,17 @@ body > footer {
 /**
 * Text elements.
 **/
-h1 {
+header h1 {
     margin: 0.2em 0;
     font-size: 4em;
     font-weight: 400;
 }
 
 @media (max-width: 30em) {
-    h1 {
+    header h1 {
         font-size: 3em;
         text-shadow: 1px 1px 0 #499e8d, 3px 3px 0 rgba(200,232,200,.5);
     }
-}
-
-h1:not(.logo) {
-    text-align: center;
 }
 
 h1 span {
@@ -119,6 +115,7 @@ h1 span {
 }
 
 @media (min-width: 480px) {
+    main h1,
     h2 {
         border-bottom: 1px solid rgba(66, 36, 36, .7);
     }
