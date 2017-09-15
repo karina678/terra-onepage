@@ -26,7 +26,7 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    font: 1.1em/1.4 Raleway, sans-serif;
+    font: 1.1em/1.5 Raleway, sans-serif;
     color: rgb(66, 36, 36);
 }
 
@@ -37,8 +37,18 @@ body > footer {
     padding-left: 1rem;
 }
 
+/* TODO: -ms und -webkit flex! */
 header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .2em .5em;
     box-shadow: 0 0 5px #888;
+}
+
+body:not(.home) header {
+    padding-top: .5em;
+    padding-bottom: .5em;
 }
 
 nav ul,
@@ -47,9 +57,63 @@ nav ol {
     padding: 0;
 }
 
-nav li {
-    float: left;
-    margin-right: 1em;
+@media (min-width: 935px) {
+    nav li {
+        float: left;
+        margin-right: 1em;
+    }
+}
+
+header nav {
+    font-size: .9em;
+}
+
+header nav ul {
+    margin: 0;
+}
+
+header nav ul > li + li {
+    margin-top: 0;
+}
+
+header nav > ul > li:first-child {
+    position: relative;
+}
+
+header nav ul li:first-child button {
+    padding: 0;
+    border: 0;
+}
+
+header nav ul ul {
+    position: absolute;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s ease-in;
+}
+
+header nav ul ul.open {
+    padding: .7em;
+    background-color: rgba(73,158,141, .8);
+    border-radius: 2px;
+    visibility: visible;
+    opacity: 1;
+}
+
+header nav ul ul li {
+    float: none;
+    margin-right: 0;
+}
+header nav ul ul a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header nav ul ul a:hover,
+header nav ul ul a:focus {
+    color: #fff;
+    text-decoration: underline;
 }
 
 main {
@@ -80,7 +144,6 @@ body > footer {
 * Text elements.
 **/
 header h1 {
-    margin: 0.2em 0;
     font-size: 4em;
     font-weight: 400;
 }
@@ -89,17 +152,6 @@ header h1 {
     header h1 {
         font-size: 3em;
         text-shadow: 1px 1px 0 #499e8d, 3px 3px 0 rgba(200,232,200,.5);
-    }
-}
-
-h1 span {
-    font-family: monospace;
-    font-size: .5em;
-}
-
-@media (max-width: 50rem) {
-    h1 span {
-        display: block;
     }
 }
 
@@ -112,6 +164,7 @@ h1 span {
 
 a {
     color: rgb(73,158,141);
+    transition: color .3s ease;
 }
 
 a:hover,
@@ -119,12 +172,25 @@ a:focus {
     color: rgb(29, 63, 56);
 }
 
+::-moz-selection {
+    background: rgb(73,158,141);
+    color: #fff;
+}
+
+::selection {
+    background: rgb(73,158,141);
+    color: #fff;
+}
 
 
 /**
 * Page elements
 **/
 .logo {
+    /** TODO: add -ms and -webkit support! */
+    display: flex;
+    align-items: center;
+    margin: 0;
     font-family: 'Princess Sofia', cursive;
     font-weight: 400;
     color: rgb(73,158,141);
@@ -133,21 +199,52 @@ a:focus {
 }
 
 a.logo {
-    float: left;
-    margin: .5em;
     font-size: 2em;
 }
 
+.logo span {
+    font-family: monospace;
+    font-size: .5em;
+}
+
+@media (max-width: 50rem) {
+    .logo span {
+        display: block;
+    }
+}
+
+h2 {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+h2 time {
+    font-size: .5em;
+    font-weight: normal;
+}
+
 blockquote {
-    quotes: "\201C""\201D""\2018""\2019";
-    margin: 1.5em 10px;
+    margin: 1.5em 0;
     padding: 0.5em 10px;
     background: #f9f9f9;
     border-left: 10px solid rgba(73,158,141, .5);
 }
 
 blockquote:before {
-    content: open-quote;
+    content: "\201C";
     margin-right: 0.25em;
     font-family: serif;
     font-size: 4em;
@@ -182,20 +279,14 @@ li + li {
     margin-top: .5em;
 }
 
-code {
-    font-family: monospace;
-    font-size: 1.2em;
-    background-color: #ebebeb;
-    word-wrap: break-word;
+figure {
+    margin-right: 0;
+    margin-left: 0;
 }
 
-code.block {
-    display: block;
-    margin-top: .5em;
-    padding: .5em;
-    border: 1px solid #ccc;
-    word-wrap: normal;
-    overflow-x: auto;
+figcaption {
+    font-size: .8em;
+    font-style: italic;
 }
 
 .info-box {

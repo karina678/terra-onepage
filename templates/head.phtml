@@ -17,15 +17,17 @@ if (!isset($bodyClass)) {
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css" />
-    <link href='http://fonts.googleapis.com/css?family=Princess+Sofia' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Princess+Sofia' rel='stylesheet' type='text/css'>
 
-    <link href="skin/css/styles.css" rel="stylesheet" type="text/css" />
-    <?php if (isset($extraCss)) { echo getCss($extraCss); } ?>
+    <link href="<?php echo getRootPath($isRootLevel); ?>skin/css/styles.css" rel="stylesheet" type="text/css" />
+    <?php if (isset($extraCss)) { echo getCss($extraCss, $isRootLevel); } ?>
+    <link href="<?php echo getRootPath($isRootLevel); ?>skin/css/prism.css" rel="stylesheet" type="text/css" />
 
     <?php if (isset($externalSource)) { echo getExternalSource($externalSource); } ?>
-    <script type="text/javascript" src="skin/js/utils.js"></script>
-    <?php if (isset($extraJs)) { echo getJavascript($extraJs); } ?>
+    <script type="text/javascript" src="<?php echo getRootPath($isRootLevel); ?>skin/js/utils.js"></script>
+    <?php if (isset($extraJs)) { echo getJavascript($extraJs, $isRootLevel); } ?>
 </head>
 
 <body id="top-position" class="<?php echo $bodyClass; ?> not-scrolled">
+    <script src="<?php echo getRootPath($isRootLevel); ?>skin/js/prism.js"></script>

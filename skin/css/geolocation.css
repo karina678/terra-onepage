@@ -3,3 +3,7 @@
     height: 400px;
     max-height: 100vw;
 }
+
+.map:empty {
+    height: auto;
+}

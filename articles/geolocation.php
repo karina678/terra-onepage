@@ -1,22 +1,20 @@
 <?php
 /**
  * Created by Karina Hinkelthein
- * 15.11.2014
+ * 22.03.2016
  */
+
 error_reporting(0);
 
-$title = 'terra-karina.de';
-$bodyClass = 'home';
-$isHomePage = true;
-$isRootLevel = true;
+include('../php/utils.php');
 
+$title = 'Geolocation' . getTitleDefault();
 $extraJs = 'geolocation.js';
 $extraCss = 'geolocation.css';
-$externalSource = '<script src="https://maps.google.com/maps/api/js?sensor=true"></script>';
+$externalSource = '<script src="https://maps.google.com/maps/api/js"></script>';
 
-include('php/utils.php');
-include('templates/head.phtml');
-include('templates/header.phtml');
+include('../templates/head.phtml');
+include('../templates/header.phtml');
 ?>
 
     <main>
@@ -272,4 +270,4 @@ include('templates/header.phtml');
         </footer>
     </main>
 
-<?php include('templates/footer.phtml'); ?>
+<?php include('../templates/footer.phtml'); ?>

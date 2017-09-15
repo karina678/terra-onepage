@@ -44,8 +44,14 @@
 
 .footnotes {
     list-style-type: none !important;
+    padding-left: 0;
+}
+
+.footnotes li {
+    padding-left: 25px;
 }
 
 .footnotes li:before {
     content: '[' attr(data-number) '] ';
+    margin-left: -24px;
 }
