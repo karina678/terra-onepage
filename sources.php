@@ -17,7 +17,7 @@ include('templates/header.phtml');
 
     <main>
         <section>
-        <h1>Sources</h1>
+        <h1 class="article-title">Sources</h1>
 
         <p>All article specific sources are listed at the end of those articles.</p>
 

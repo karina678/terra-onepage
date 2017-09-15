@@ -21,7 +21,7 @@ include('templates/header.phtml');
 
     <main>
         <section>
-            <h2><span>Geolocation</span> <time datetime="2016-02-29">29 February 2016</time></h2>
+            <h2 class="article-title"><span>Geolocation</span> <time datetime="2016-02-29">29 February 2016</time></h2>
 
             <p class="note">To test this feature you have to allow your browser to use your location data.</p>
 

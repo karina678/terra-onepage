@@ -19,7 +19,7 @@ include('../templates/header.phtml');
 
     <main>
         <section>
-            <h2><span>Geolocation</span> <time datetime="2016-02-29">29 February 2016</time></h2>
+            <h1 class="article-title"><span>Geolocation</span> <time datetime="2016-02-29">29 February 2016</time></h1>
 
             <p class="note">To test this feature you have to allow your browser to use your location data.</p>
 
@@ -32,7 +32,7 @@ include('../templates/header.phtml');
         </section>
 
         <section>
-            <h3>Introductory Notes</h3>
+            <h2>Introductory Notes</h2>
             <p>
                 The API is accessible via the <code class="language-js">navigator.geolocation</code> object.<br />
                 You can check if a user's browser supports the API like so:
@@ -66,7 +66,7 @@ include('../templates/header.phtml');
         </section>
 
         <section>
-            <h3><code class="language-js">getCurrentPosition()</code> - And your current position in numbers</h3>
+            <h2><code class="language-js">getCurrentPosition()</code> - And your current position in numbers</h2>
             <p>
                 First let's look at the plain data that can be retrieved from the API.<br />
                 Note that not all data is available on all devices (e.g. &ldquo;altitude&rdquo; on desktop devices).
@@ -156,7 +156,7 @@ include('../templates/header.phtml');
         </section>
 
         <section>
-            <h3>Your current position in a map</h3>
+            <h2>Your current position in a map</h2>
             <p>
                 The data retrieved by the <code class="language-js">getCurrentPosition()</code> method can be used to mark your location in, for instance, a Google Map.<br />
                 Tutorials for that are widespread around the internet, so I won't describe details here.
@@ -168,7 +168,7 @@ include('../templates/header.phtml');
         </section>
 
         <section>
-            <h3>Your distance to Fiji Islands</h3>
+            <h2>Your distance to Fiji Islands</h2>
             <p>
                 And of course you can use it to calculate your distance to other places, if you know their coordinates.<br />
                 (I used Gourav Singh's code for the calculation<a href="#distance-calc" class="footnote-link">[5]</a>.)
@@ -184,7 +184,7 @@ include('../templates/header.phtml');
         </section>
 
         <section>
-            <h3>Tracking your movement</h3>
+            <h2>Tracking your movement</h2>
 
             <p>
                 Your position data can change: either because your device is moving or because the accuracy of the geo information increases.
@@ -229,7 +229,7 @@ include('../templates/header.phtml');
         </section>
 
         <footer>
-            <h3>Sources:</h3>
+            <h2>Sources:</h2>
 
             <ol class="link-list footnotes">
                 <li id="w3spec" data-number="1">
