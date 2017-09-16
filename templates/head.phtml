@@ -25,6 +25,7 @@ if (!isset($bodyClass)) {
     <link href="<?php echo getRootPath($isRootLevel); ?>skin/css/prism.css" rel="stylesheet" type="text/css" />
 
     <?php if (isset($externalSource)) { echo getExternalSource($externalSource); } ?>
+    <script type="text/javascript" src="<?php echo getRootPath($isRootLevel); ?>skin/js/main-navigation.js"></script>
     <script type="text/javascript" src="<?php echo getRootPath($isRootLevel); ?>skin/js/utils.js"></script>
     <?php if (isset($extraJs)) { echo getJavascript($extraJs, $isRootLevel); } ?>
 </head>

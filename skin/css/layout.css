@@ -22,12 +22,13 @@ body {
     -webkit-flex-direction: column;
     display: flex;
     flex-direction: column;
-
     min-height: 100vh;
     margin: 0;
     padding: 0;
     font: 1.1em/1.5 Raleway, sans-serif;
     color: rgb(66, 36, 36);
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 header,
@@ -42,11 +43,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 115px;
     padding: .2em .5em;
     box-shadow: 0 0 5px #888;
 }
 
 body:not(.home) header {
+    height : 70px;
     padding-top: .5em;
     padding-bottom: .5em;
 }
@@ -55,65 +58,6 @@ nav ul,
 nav ol {
     list-style-type: none;
     padding: 0;
-}
-
-@media (min-width: 935px) {
-    nav li {
-        float: left;
-        margin-right: 1em;
-    }
-}
-
-header nav {
-    font-size: .9em;
-}
-
-header nav ul {
-    margin: 0;
-}
-
-header nav ul > li + li {
-    margin-top: 0;
-}
-
-header nav > ul > li:first-child {
-    position: relative;
-}
-
-header nav ul li:first-child button {
-    padding: 0;
-    border: 0;
-}
-
-header nav ul ul {
-    position: absolute;
-    right: 0;
-    visibility: hidden;
-    opacity: 0;
-    transition: all .3s ease-in;
-}
-
-header nav ul ul.open {
-    padding: .7em;
-    background-color: rgba(73,158,141, .8);
-    border-radius: 2px;
-    visibility: visible;
-    opacity: 1;
-}
-
-header nav ul ul li {
-    float: none;
-    margin-right: 0;
-}
-header nav ul ul a {
-    color: #fff;
-    text-decoration: none;
-}
-
-header nav ul ul a:hover,
-header nav ul ul a:focus {
-    color: #fff;
-    text-decoration: underline;
 }
 
 main {
@@ -167,7 +111,7 @@ header h1 {
 
 a {
     color: rgb(73,158,141);
-    transition: color .3s ease;
+    transition: color .3s ease-out;
 }
 
 a:hover,
@@ -206,6 +150,7 @@ a.logo {
 }
 
 .logo span {
+    margin-left: 5px;
     font-family: monospace;
     font-size: .5em;
 }

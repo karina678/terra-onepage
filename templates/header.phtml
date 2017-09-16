@@ -11,4 +11,27 @@ $headline = isset($headline) ? $headline : false;
 
 <header>
     <?php echo getPageHeadline($isHomePage, $headline); ?>
+
+    <button type="button" class="nav-toggler" data-toggle="main-navigation" title="Main Navigation">
+        <svg width="22" height="20" aria-labelledby="toggler-title">
+            <title id="toggler-title">Main Navigation</title>
+            <g>
+                <path d="M0 2 22 2" />
+                <path d="M0 9 22 9" />
+                <path d="M0 16 22 16" />
+            </g>
+        </svg>
+    </button>
+
+    <nav id="main-nav">
+        <ul>
+            <li>
+                <span>Articles</span>
+                <ul>
+                    <li><a href="<?php echo getRootPath($isRootLevel); ?>articles/geolocation.php">Geolocation</a></li>
+                </ul>
+            </li>
+            <li><a href="<?php echo getRootPath($isRootLevel); ?>sources.php">Sources</a></li>
+        </ul>
+    </nav>
 </header>
