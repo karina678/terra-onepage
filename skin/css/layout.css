@@ -43,13 +43,11 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 115px;
     padding: .2em .5em;
     box-shadow: 0 0 5px #888;
 }
 
 body:not(.home) header {
-    height : 70px;
     padding-top: .5em;
     padding-bottom: .5em;
 }
@@ -136,6 +134,7 @@ a:focus {
 .logo {
     /** TODO: add -ms and -webkit support! */
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     margin: 0;
     font-family: 'Princess Sofia', cursive;
