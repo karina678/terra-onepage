@@ -13,13 +13,6 @@ function initPage() {
     }
 }
 
-
-/**
- * STICKY HEADER
- *
- * document.querySelector('body')[0].classList.remove('not-scrolled');
- */
-
 function smoothScroll() {
     // Only execute if link target belongs to the same page.
     if ((location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')) && (location.hostname == this.hostname)) {
