@@ -51,9 +51,14 @@ header nav {
     position: absolute;
     top: calc(100% + 10px);
     left: 0;
-    /* TODO: -ms und -webkit */
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
